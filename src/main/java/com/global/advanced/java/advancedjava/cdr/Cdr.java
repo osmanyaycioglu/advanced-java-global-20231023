@@ -6,6 +6,7 @@ import lombok.Data;
 public class Cdr {
 
     private String cdrId;
+    private String msisdn;
     private long   csrDateInMillis;
     private int    callDurationInSeconds;
     private int    cellId;
