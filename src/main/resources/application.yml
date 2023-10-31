@@ -6,3 +6,20 @@ deneme:
         db-url: xyz
         db-username: ods
         test-version: 1.0.0
+spring:
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        password: 123456
+        url: jdbc:postgresql://localhost:5432/playground
+        username: postgres
+    jpa:
+        database: POSTGRESQL
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQL94Dialect
+                format_sql: true
+                show_sql: true
+                jdbc:
+                    batch_size: 1000

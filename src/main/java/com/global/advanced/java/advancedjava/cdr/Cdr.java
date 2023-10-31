@@ -1,21 +1,31 @@
 package com.global.advanced.java.advancedjava.cdr;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 @Data
+@Builder(setterPrefix = "with")
+@AllArgsConstructor
+@Entity
 public class Cdr {
-
+    @Id
     private String cdrId;
     private String msisdn;
     private long   cdrDateInMillis;
     private int    callDurationInSeconds;
     private int    cellId;
     private int    callRate;
+
+    public Cdr() {
+    }
 
     public List<Cdr> generateRandomCdr(SecureRandom secureRandomParam,
                                        int count) {
