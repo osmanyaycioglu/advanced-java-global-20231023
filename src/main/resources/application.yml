@@ -1,0 +1,8 @@
+deneme:
+    app:
+        app-name: new application
+        app-port: 9090
+        db-password: 347273
+        db-url: xyz
+        db-username: ods
+        test-version: 1.0.0

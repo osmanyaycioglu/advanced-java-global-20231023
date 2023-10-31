@@ -44,6 +44,9 @@ public class GeneralPropRead {
                         } else if (typeLoc == Integer.class) {
                             fieldLoc.set(objectParam,
                                          Integer.parseInt(propertyLoc));
+                        } else if (typeLoc == Long.class) {
+                            fieldLoc.set(objectParam,
+                                         Long.parseLong(propertyLoc));
                         }
                     }
                 }

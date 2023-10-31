@@ -1,17 +1,21 @@
 package com.global.advanced.java.advancedjava.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.*;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import java.time.LocalDate;
 
 @Data
 @Builder(setterPrefix = "with")
 @AllArgsConstructor
 @NoArgsConstructor
+@XmlRootElement
 public class Customer implements Comparable<Customer> {
     @NotEmpty
     @NotBlank
@@ -23,6 +27,8 @@ public class Customer implements Comparable<Customer> {
     private String    lastName;
     @Past
     @NotNull
+    @JsonIgnore
+    @XmlTransient
     private LocalDate birthdate;
     @Max(400)
     @Min(10)
